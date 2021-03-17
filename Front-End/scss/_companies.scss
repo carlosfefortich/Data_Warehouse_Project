@@ -1,0 +1,13 @@
+.create-companies-container{
+    border: 1px solid rgb(44, 99, 218);
+    border-radius: 5%;
+    position: relative;
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 25px 50px -12px rgba($color: #071172, $alpha: 0.5);
+
+    img{
+        cursor: pointer;
+    }
+}

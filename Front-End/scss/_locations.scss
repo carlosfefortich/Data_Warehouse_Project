@@ -1,0 +1,13 @@
+.tree-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row-reverse;
+
+  ul, li{
+    text-decoration: none;
+    list-style-type: none;
+    font-size: 30px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+}

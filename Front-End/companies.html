@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Companies</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <!-- Add company Modal -->
+    <div class="modal fade" id="addCompanyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add company</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" class="form-login" id="add-company-form">
+                    <label for="companyAddInputName" class="form-label" >Name:</label>
+                    <input type="text" id="companyAddInputName" class="form-control mb-2" required>
+                    <label for="companyAddInputEmail" class="form-label" >Email:</label>
+                    <input type="text" id="companyAddInputEmail" class="form-control mb-4" required>
+                    <label for="add-company-select" class="form-label" >City:</label>
+                    <select class="form-select mb-3" aria-label="Default select example" id="add-company-select">
+                        <option selected>Select the city by clicking it</option>
+                    </select>
+                    <label for="companyAddInputAddress" class="form-label" >Address:</label>
+                    <input type="text" id="companyAddInputAddress" class="form-control mb-4" required>
+                    <label for="companyAddInputPhone" class="form-label" >Phone:</label>
+                    <input type="text" id="companyAddInputPhone" class="form-control mb-4" required>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <!-- Edit company Modal -->
+    <div class="modal fade" id="editCompanyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit company</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" class="form-login" id="edit-company-form">
+                    <label for="companyEditInputName" class="form-label" >Name:</label>
+                    <input type="text" id="companyEditInputName" class="form-control mb-2" required>
+                    <label for="companyEditInputEmail" class="form-label" >Email:</label>
+                    <input type="email" id="companyEditInputEmail" class="form-control mb-4" required>
+                    <label for="edit-company-select" class="form-label" >City:</label>
+                    <select class="form-select mb-3" aria-label="Default select example" id="edit-company-select">
+                        <option selected>Select the city by clicking it</option>
+                    </select>
+                    <label for="companyEditInputAddress" class="form-label" >Address:</label>
+                    <input type="text" id="companyEditInputAddress" class="form-control mb-4" required>
+                    <label for="companyEditInputPhone" class="form-label" >Phone:</label>
+                    <input type="text" id="companyEditInputPhone" class="form-control mb-4" required>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Delete company Modal -->
+    <div class="modal fade" id="deleteCompanyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Delete company</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>¿Are you sure you want to delete this company?</p>
+                <div>
+                    <button class="btn btn-primary" id="btn-delete-company">Yes</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+                
+            </div>
+                
+            <div class="modal-footer">
+            
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-dark bg-light">
+        <div class="container-fluid">
+            <a href="index.html"><img src="./images/logo_acamica.png" alt="logo" width="50" height="50" class="text-light"></a>
+            <a href="index.html" class="nav-link fs-4 text-primary">Contacts</a>
+            <a href="companies.html" class="nav-link fs-4">Companies</a>
+            <a href="users.html" class="nav-link fs-4">Users</a>
+            <a href="locations.html" class="nav-link fs-4">Region/City</a>
+        </div>
+    </nav>
+    <div class="d-flex justify-content-around my-5">
+        <div>
+            <h2>Companies</h2>
+        </div>
+        <div>
+            <button class="btn btn-primary px-5" data-bs-toggle="modal" data-bs-target="#addCompanyModal" id="new-company-btn">New</button>
+        </div>
+    </div>
+    
+    <div class="create-companies-container" id="companies-container">
+        <!-- Header container -->
+        <div class="row">
+            <div class="col">
+                <div class="d-flex flex-row">
+                    <h4>Name</h4>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-flex flex-row">
+                    <h4>Email</h4>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-flex flex-row">
+                    <h4>City</h4>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-flex flex-row">
+                    <h4>Address</h4>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-flex flex-row">
+                    <h4>Phone</h4>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-flex flex-row">
+                    <h4>Actions</h4>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info -->
+
+
+    </div>
+
+    <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./js/companies/get.js"></script>
+    <script src="./js/companies/getCitiesSelect.js"></script>
+    <script src="./js/companies/add.js"></script>
+    <script src="./js/getIds.js"></script>
+    <script src="./js/companies/edit.js"></script>
+    <script src="./js/companies/delete.js"></script>
+</body>
+</html>
